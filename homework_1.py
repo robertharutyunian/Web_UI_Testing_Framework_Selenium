@@ -117,6 +117,8 @@ def test_category(button):
         second_page_actual_amount = len(driver.find_elements(By.CSS_SELECTOR, "div.col-lg-4.col-md-6.mb-4"))
         second_page_expected_amount = 6
         assert first_page_actual_amount == first_page_expected_amount
+
+
         assert second_page_actual_amount == second_page_expected_amount
     elif button.lower() == "monitors":
         driver.find_element(By.CSS_SELECTOR, "div.list-group a:nth-of-type(4)").click()
