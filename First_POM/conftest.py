@@ -4,7 +4,7 @@ import pytest
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser")
+    parser.addoption("--browser", default="chrome")
 
 @pytest.fixture()
 def start(request):
