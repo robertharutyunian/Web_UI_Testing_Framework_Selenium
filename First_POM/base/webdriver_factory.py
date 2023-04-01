@@ -10,7 +10,6 @@ class WebDriverFactory:
         self.browser_type = browser_type
 
     def get_driver(self):
-        # try:
         if self.browser_type.lower() == "firefox":
             driver = webdriver.Firefox()
         elif self.browser_type.lower() == "edge":
@@ -20,11 +19,6 @@ class WebDriverFactory:
         else:
             print(f"Browser type '{self.browser_type}' is current not supported.")
             return
-        # except AttributeError as err:
-        #     if str(err) == "'NoneType' object has no attribute 'lower'":
-        #         driver = webdriver.Chrome()
-        #     else:
-        #         raise
         url = "https://opensource-demo.orangehrmlive.com"
         driver.get(url)
         return driver
