@@ -12,7 +12,6 @@ def start(request):
     driver = webdriver.get_driver()
     if request.cls is not None:
         request.cls.driver = driver
-    yield driver
-    if request.config.getoption("--browser") != None:
-        if request.config.getoption("--browser").lower == "firefox":
-            driver.quit()
+    yield driver  
+    if request.config.getoption("--browser").lower == "firefox":
+        driver.quit()
